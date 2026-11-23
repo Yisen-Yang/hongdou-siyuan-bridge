@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Hongdou SiYuan Bridge",
+  "version": "0.3.0",
+  "description": "红豆 ↔ 思源笔记 双端联动：在红豆右键「发送到思源」，通过 6 位配对码鉴权，可读取完整文献元数据与 PDF 本地路径。",
+  "author": "Yisen-Yang",
+  "homepage_url": "https://github.com/Yisen-Yang/hongdou-siyuan-bridge",
+  "icons": {
+    "48": "chrome/content/icon.png",
+    "96": "chrome/content/icon.png"
+  },
+  "applications": {
+    "zotero": {
+      "id": "hongdou-siyuan-bridge@yisen-yang.github.io",
+      "update_url": "https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/latest/download/update.json",
+      "strict_min_version": "7.0",
+      "strict_max_version": "10.0.*"
+    },
+    "com.inoteexpress.hongdou": {
+      "strict_min_version": "7.9.9",
+      "strict_max_version": "10.9.9"
+    }
+  }
+}

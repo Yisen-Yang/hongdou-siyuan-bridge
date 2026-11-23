@@ -1,0 +1,15 @@
+# 打包产物（作为 release 附件上传，不入库）
+*.xpi
+
+# Python
+__pycache__/
+*.pyc
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+*.log
+
+# 备份
+*.bak
+*.backup
