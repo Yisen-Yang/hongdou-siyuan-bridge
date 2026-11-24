@@ -1,0 +1,22 @@
+[
+  {
+    "repo": "Yisen-Yang/hongdou-siyuan-bridge",
+    "releases": [
+      {
+        "targetZoteroVersion": "10",
+        "tagName": "v0.3.1",
+        "xpiDownloadUrl": {
+          "github": "https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.1/hongdou-siyuan-bridge-0.3.1.xpi",
+          "ghProxy": "https://gh-proxy.org/https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.1/hongdou-siyuan-bridge-0.3.1.xpi"
+        },
+        "releaseDate": "2026-11-24T02:09:25Z",
+        "id": "hongdou-siyuan-bridge@yisen-yang.github.io",
+        "xpiVersion": "0.3.1",
+        "name": "Hongdou SiYuan Bridge",
+        "description": "把红豆（Zotero 内核）里的文献一键推送到思源笔记：条目上右键「发送到思源」，经 6 位配对码鉴权，本地推送完整元数据与 PDF 路径，思源端自动落笔。仅走 127.0.0.1，不联网。",
+        "minZoteroVersion": "7.0.0",
+        "maxZoteroVersion": "10.99.99"
+      }
+    ]
+  }
+]
