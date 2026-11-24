@@ -3,8 +3,8 @@
     "hongdou-siyuan-bridge@yisen-yang.github.io": {
       "updates": [
         {
-          "version": "0.3.0",
-          "update_link": "https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.0/hongdou-siyuan-bridge-0.3.0.xpi",
+          "version": "0.3.1",
+          "update_link": "https://github.com/Yisen-Yang/hongdou-siyuan-bridge/releases/download/v0.3.1/hongdou-siyuan-bridge-0.3.1.xpi",
           "update_hash": "",
           "applications": {
             "zotero": {

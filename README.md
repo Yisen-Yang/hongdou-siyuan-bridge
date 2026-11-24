@@ -8,7 +8,7 @@
 
 ## 安装
 
-1. 下载 `hongdou-siyuan-bridge-0.3.0.xpi`；
+1. 下载 `hongdou-siyuan-bridge-0.3.1.xpi`；
 2. 红豆 → 工具 → **插件中心** → 右上角「从文件安装」→ 选这个 xpi；
 3. 按提示重启红豆；
 4. 重启后菜单栏「工具」里应出现两项：
@@ -20,7 +20,7 @@
 > 都尝试监听 18501 端口，导致发送不稳定。
 >
 > 如果安装时提示「文件损坏」，那是 manifest 缺少 `update_url` 的经典报错——
-> 本包已修好，请确认下载的是 0.3.0 及以上版本。
+> 本包已修好，请确认下载的是 0.3.1 及以上版本。
 
 ---
 
@@ -73,7 +73,7 @@ tags[], attachments[{itemID,key,title,contentType,path,exists}]
 
 ```bash
 curl http://127.0.0.1:18501/ping
-# {"ok":true,"app":"hongdou-siyuan-bridge","version":"0.3.0","paired":false,"port":18501,...}
+# {"ok":true,"app":"hongdou-siyuan-bridge","version":"0.3.1","paired":false,"port":18501,...}
 
 curl -X POST http://127.0.0.1:18501/pair \
   -H "Content-Type: application/json" -d '{"code":"417574"}'
@@ -97,7 +97,7 @@ curl -H "X-Hongdou-Token: <token>" http://127.0.0.1:18501/selected
 
 | 现象 | 原因 / 处理 |
 | --- | --- |
-| 安装提示「文件损坏」 | manifest 缺 `update_url`；用 0.3.0+ |
+| 安装提示「文件损坏」 | manifest 缺 `update_url`；用 0.3.1+ |
 | 右键没有「发送到思源」 | 插件未启用或红豆未重启；到插件中心确认状态 |
 | 思源收不到 | 端口不一致（思源设置里桥接端口要同样是 18501）；或未配对 |
 | 配对总报「配对码不正确」 | 重新点一次菜单会生成新码，以最新弹窗为准；码 10 分钟过期 |

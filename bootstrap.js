@@ -17,7 +17,7 @@
 
 const PORT = 18501;
 const PREF_PREFIX = "extensions.zotero.hongdouSYSBridge";
-const VERSION = "0.3.0";
+const VERSION = "0.3.1";
 const QUEUE_MAX = 20;
 
 let server = null;          // HttpServer 实例
@@ -26,6 +26,7 @@ let pendingCode = null;     // 待校验的 6 位配对码
 let pendingCodeAt = 0;      // 生成时间（10 分钟过期）
 let queue = [];             // 待插入队列 [{at, items:[...]}]
 let menuItems = [];         // 已插入的菜单项（防重复注册）
+let menuListeners = [];     // 菜单事件监听（退出时清理）
 
 /* ---------------- 基础工具 ---------------- */
 
@@ -644,6 +645,18 @@ function buildMenu() {
             itemMenu.appendChild(sep);
             itemMenu.appendChild(mi);
             menuItems.push(sep, mi);
+
+            // 每次打开右键菜单都刷新一下待发送数量，别让用户猜
+            const refreshLabel = () => {
+                try {
+                    const el = doc.getElementById("hongdou-sys-send");
+                    if (!el) return;
+                    const n = queue.reduce((s2, b) => s2 + ((b && b.items) ? b.items.length : 0), 0);
+                    el.setAttribute("label", n > 0 ? `发送到思源（队列 ${n} 篇）` : "发送到思源");
+                } catch (e) { logMsg("refreshLabel failed: " + e); }
+            };
+            itemMenu.addEventListener("popupshowing", refreshLabel);
+            menuListeners.push({ el: itemMenu, type: "popupshowing", fn: refreshLabel });
         }
 
         // 2) 工具菜单入口（显示配对码 / 清空队列）
@@ -664,6 +677,10 @@ function buildMenu() {
 }
 
 function removeMenu() {
+    for (const l of menuListeners) {
+        try { if (l.el && l.fn) l.el.removeEventListener(l.type, l.fn); } catch (e) { /* noop */ }
+    }
+    menuListeners = [];
     for (const el of menuItems) {
         try { if (el && el.parentNode) el.parentNode.removeChild(el); } catch (e) { /* noop */ }
     }

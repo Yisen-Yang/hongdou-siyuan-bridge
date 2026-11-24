@@ -8,7 +8,7 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(ROOT, "hongdou-siyuan-bridge-0.3.0.xpi")
+OUT = os.path.join(ROOT, "hongdou-siyuan-bridge-0.3.1.xpi")
 
 # 需打包的文件（相对 ROOT）
 FILES = [

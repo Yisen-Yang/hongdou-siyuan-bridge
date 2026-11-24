@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Hongdou SiYuan Bridge",
-  "version": "0.3.0",
-  "description": "红豆 ↔ 思源笔记 双端联动：在红豆右键「发送到思源」，通过 6 位配对码鉴权，可读取完整文献元数据与 PDF 本地路径。",
+  "version": "0.3.1",
+  "description": "把红豆（Zotero 内核）里的文献一键推送到思源笔记：条目上右键「发送到思源」，经 6 位配对码鉴权，本地推送完整元数据与 PDF 路径，思源端自动落笔。仅走 127.0.0.1，不联网。",
   "author": "Yisen-Yang",
   "homepage_url": "https://github.com/Yisen-Yang/hongdou-siyuan-bridge",
   "icons": {
